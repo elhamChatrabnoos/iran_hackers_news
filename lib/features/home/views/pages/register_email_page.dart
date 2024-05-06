@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:hackers_news/app/config/app_size.dart';
 import 'package:hackers_news/app/config/app_texts.dart';
 import 'package:hackers_news/app/config/app_theme.dart';
+import 'package:hackers_news/app/routers/route_names.dart';
+import 'package:hackers_news/app/routers/route_pages.dart';
 import 'package:hackers_news/app/widgets/custom_app_bar.dart';
 import 'package:hackers_news/app/widgets/custom_button.dart';
 import 'package:hackers_news/app/widgets/custom_text.dart';
@@ -65,6 +67,24 @@ class RegisterEmailPage extends GetView<HomeController> {
                       keyboardType: TextInputType.number,
                       maxLength: 11,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      children: [
+                        CustomText(text: AppText.privacyPolicyTxt),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          onTap: () {
+                            Get.toNamed(RoutesName.privacyAndPolicyPage);
+                          },
+                          child: CustomText(
+                            text: AppText.privacyPolicyTxt2,
+                            textDecoration: TextDecoration.underline,
+                            fontColor: Colors.blue,
+                          ),
+                        ),
+                        CustomText(text: AppText.privacyPolicyTxt3),
+                      ],
                     ),
                     const SizedBox(height: 20),
                     Obx(
